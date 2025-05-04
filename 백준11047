@@ -1,0 +1,14 @@
+n, k = map(int, input().split())
+lst, out = [], 0
+
+for i in range(n):
+    lst.append(int(input()))
+
+while k != 0:
+    top = len(lst) - 1
+    if lst[top] > k:
+        del lst[top]
+    else:
+        out += (k // lst[top])
+        k -= (k // lst[top]) * lst[top]
+print(out)
